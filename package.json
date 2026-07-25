@@ -1,0 +1,28 @@
+{
+  "name": "ref-cloudflare-d1-app",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.build.json",
+    "migrations:check": "node scripts/check-migrations.mjs",
+    "drift:check": "node scripts/check-migration-manifest.mjs",
+    "sql:check": "node scripts/check-query-safety.mjs",
+    "deploy:shape": "node scripts/check-deploy-shape.mjs",
+    "ci": "pnpm typecheck && pnpm test && pnpm migrations:check && pnpm drift:check && pnpm sql:check && pnpm build && pnpm deploy:shape",
+    "dev": "wrangler dev",
+    "migrations:local": "wrangler d1 migrations apply vcqa_ref_d1 --local"
+  },
+  "dependencies": {
+    "zod": "^4.0.8"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260724.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.26.0"
+  }
+}
+

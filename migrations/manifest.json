@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "migrations": [
+    {
+      "file": "0001_init.sql",
+      "sha256": "66da81045d5d38f98328831b4f8ae7821006db8fdbd95992fb3c1f2dcf13d6b7"
+    },
+    {
+      "file": "0002_seed_demo.sql",
+      "sha256": "ca06a6a05bee2117bad1f14a7f4db9dd9b6e2360e1361cedb46f1615eec22082"
+    }
+  ]
+}
